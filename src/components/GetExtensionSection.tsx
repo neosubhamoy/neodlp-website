@@ -22,7 +22,7 @@ export default function GetExtensionSection({ release }: { release: LatestExtens
                             </div>
                         }
                         as="a"
-                        href={`#`}
+                        href={`https://chromewebstore.google.com/detail/neo-downloader-plus/mehopeailfjmiloiiohgicphlcgpompf`}
                         target="_blank"
                         >
                         <span className="font-semibold flex items-center gap-2">
@@ -41,7 +41,7 @@ export default function GetExtensionSection({ release }: { release: LatestExtens
                             </div>
                         }
                         as="a"
-                        href={`#`}
+                        href={`https://addons.mozilla.org/en-US/firefox/addon/neo-downloader-plus`}
                         target="_blank"
                         >
                         <span className="font-semibold flex items-center gap-2">

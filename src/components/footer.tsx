@@ -22,7 +22,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                    <h5 className="font-semibold mb-2">Terms</h5>
+                    <h5 className="font-semibold mb-2">Legal</h5>
                     <a className="text-sm text-muted-foreground hover:underline" href="/privacy-policy">Privacy Policy</a>
                     <a className="text-sm text-muted-foreground hover:underline" href="/terms-of-use">Terms Of Use</a>
                     <a className="text-sm text-muted-foreground hover:underline" href="/dmca">DMCA</a>
@@ -31,6 +31,7 @@ export default function Footer() {
                     <h5 className="font-semibold mb-2">Sources</h5>
                     <a className="text-sm text-muted-foreground hover:underline" href="https://github.com/neosubhamoy/neodlp" target="_blank">NeoDLP</a>
                     <a className="text-sm text-muted-foreground hover:underline" href="https://github.com/neosubhamoy/neodlp-extension" target="_blank">NeoDLP Extension</a>
+                    <a className="text-sm text-muted-foreground hover:underline" href="https://github.com/neosubhamoy/neodlp-website" target="_blank">NeoDLP Website</a>
                 </div>
                 <div className="flex flex-col gap-2">
                     <h5 className="font-semibold mb-2">More Products from Us</h5>
