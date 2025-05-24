@@ -22,7 +22,7 @@ export const CommandSnippet = ({
     }
 
     return (
-        <div className="flex flex-col rounded-lg border border-border overflow-hidden min-w-[20rem] md:min-w-[25rem]">
+        <div className="flex flex-col rounded-lg border border-border overflow-hidden w-[20rem] md:w-[30rem]">
             <div className="flex items-center justify-between px-4 py-1 gap-2 bg-muted">
                 <div className="flex items-center gap-2">
                     <Terminal className="size-4" />
@@ -33,7 +33,7 @@ export const CommandSnippet = ({
                     <span className="text-xs">Copy</span>
                 </button>
             </div>
-            <code className="flex px-4 py-2">
+            <code className="flex px-4 py-2 overflow-x-scroll text-nowrap">
                 <p className="">{children}</p>
             </code>
         </div>

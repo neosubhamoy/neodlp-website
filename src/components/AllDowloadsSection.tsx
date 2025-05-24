@@ -1,7 +1,8 @@
 import { type LatestRelease } from "@/types/release";
 import { SlidingButton } from "@/components/ui/sliding-button";
-import { Download } from "lucide-react";
+import { Download, TriangleAlert } from "lucide-react";
 import { CommandSnippet } from "@/components/ui/command-snippet";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 export default function AllDownloadsSection({ release }: { release: LatestRelease }) {
     return (
@@ -12,7 +13,7 @@ export default function AllDownloadsSection({ release }: { release: LatestReleas
                 <p className="mt-4 text-xl font-semibold">Latest version (v{release.version})</p>
                 <p className="text-sm text-muted-foreground">Released at: {new Date(release.pub_date).toLocaleString()} - <a className="hover:underline" href="https://github.com/neosubhamoy/neodlp/releases/latest" target="_blank">✨ Read Changelog</a></p>
             </div>
-            <div className="flex flex-col items-center justify-center text-center gap-2">
+            <div className="flex flex-col items-center justify-center text-center gap-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4 mt-10">
                     <SlidingButton
                         slidingContent={
@@ -107,7 +108,7 @@ export default function AllDownloadsSection({ release }: { release: LatestReleas
                             </svg>
                             Download for MacOS
                         </span>
-                        <span className="text-xs">(ARM64) DMG Installer</span>
+                        <span className="text-xs">⚠️ (ARM64) DMG Installer</span>
                     </SlidingButton>
                     <SlidingButton
                         slidingContent={
@@ -126,7 +127,7 @@ export default function AllDownloadsSection({ release }: { release: LatestReleas
                             </svg>
                             Download for MacOS
                         </span>
-                        <span className="text-xs">(ARM64) APP Bundle</span>
+                        <span className="text-xs">⚠️ (ARM64) APP Bundle</span>
                     </SlidingButton>
                     <SlidingButton
                         slidingContent={
@@ -186,6 +187,15 @@ export default function AllDownloadsSection({ release }: { release: LatestReleas
                         <span className="text-xs">(x64) AUR Snapshot</span>
                     </SlidingButton>
                 </div>
+                <div className="flex items-center justify-center text-start max-w-2xl px-4">
+                    <Alert>
+                        <TriangleAlert className="size-4 stroke-yellow-400" />
+                        <AlertTitle>Experimental Binary Downloads!</AlertTitle>
+                        <AlertDescription>
+                            MacOS ARM64 binary downloads are experimental and may not open on Apple Silicon Macs if downloaded from browser (You will get 'Damaged File' error) it's because the binaries are not signed (signing MacOS binaries requires 99$/year Apple Developer Account subscription, which I can't afford RN!) and Apple Silicon Macs don't allow unsigned apps (downloaded from browser) to be installed on the system. If you want to use NeoDLP on your Apple Silicon Macs, you can simply use the command line Curl-Bash Installer (Recommended) given below -OR- <a className="underline" href="https://github.com/neosubhamoy/neodlp?tab=readme-ov-file#%EF%B8%8F-contributing--building-from-source" target="_blank">compile it from source</a>
+                        </AlertDescription>
+                    </Alert>
+                </div>
             </div>
             <div className="flex flex-col items-center justify-center text-center gap-2 mt-10">
                 <p className="mt-4 text-xl font-semibold">Install via Command Line</p>
@@ -194,6 +204,9 @@ export default function AllDownloadsSection({ release }: { release: LatestReleas
             <div className="flex flex-col items-center justify-center gap-4 mt-12">
                 <CommandSnippet title="Windows (WinGet)">
                     winget install neodlp
+                </CommandSnippet>
+                <CommandSnippet title="MacOS (Curl-Bash Installer)">
+                    curl -sSL https://neodlp.neosubhamoy.com/neodlp_macos_installer.sh | bash
                 </CommandSnippet>
                 <CommandSnippet title="Arch Linux (AUR)">
                     yay -S neodlp

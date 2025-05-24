@@ -159,7 +159,7 @@ export const ContainerScroll = ({
                 </svg>
                 Download for MacOS
               </span>
-              <span className="text-xs">(ARM64) DMG Installer</span>
+              <span className="text-xs">⚠️ (ARM64) DMG Installer</span>
             </SlidingButton>
             </>
           )}
