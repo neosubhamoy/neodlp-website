@@ -19,6 +19,15 @@ const { title, description } = Astro.props;
 		<title>{title ?? 'untitled'}</title>
 		<ClientRouter />
 		<LoadingIndicator color='var(--foreground)' />
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-NF56ZG492B"></script>
+		<script is:inline>
+			// @ts-nocheck
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-NF56ZG492B');
+		</script>
 	</head>
 	<body class="relative min-h-screen bg-white dark:bg-black">
 		<NavBar client:load />

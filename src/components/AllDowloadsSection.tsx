@@ -34,7 +34,7 @@ export default function AllDownloadsSection({ release }: { release: LatestReleas
                                 </svg>
                                 Download for Windows
                             </span>
-                            <span className="text-xs">(x64) EXE Installer</span>
+                            <span className="text-xs">(x64 / ARM64) EXE Installer</span>
                         </SlidingButton>
                         <SlidingButton
                             slidingContent={
