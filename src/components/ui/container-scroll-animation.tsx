@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion, MotionValue } from "motion/react";
-import { ArrowRight, CircleArrowDown, Download, Puzzle } from "lucide-react";
+import { ArrowDownToLine, ArrowRight, Download, Puzzle } from "lucide-react";
 import { type LatestRelease } from "@/types/release";
 import { SlidingButton } from "@/components/ui/sliding-button";
 import { getOS } from "@/lib/utils";
@@ -216,7 +216,7 @@ export const ContainerScroll = ({
             href="/download"
           >
             <span className="font-semibold flex items-center gap-2">
-              <CircleArrowDown className="size-4" />
+              <ArrowDownToLine className="size-4" />
               All Downloads
             </span>
             <span className="text-xs">Choose from all download options</span>

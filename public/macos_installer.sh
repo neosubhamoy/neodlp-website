@@ -6,12 +6,17 @@ REPO="neodlp"
 DOWNLOAD_DIR=~/Downloads
 
 # Check if NeoDLP is already installed
-echo "### === NeoDLP MacOS Curl-Bash Installer === ###"
-echo "🔃 Checking system requirements..."
+echo "### === NeoDLP Installer (MacOS) === ###"
+echo "🔍 Checking system requirements..."
 if [ -d "/Applications/NeoDLP.app" ]; then
     echo "❗ NeoDLP is already installed at /Applications/NeoDLP.app"
-    echo "🛑 Installation aborted."
-    exit 0
+    read -p "❓ Would you like to reinstall/update? (y/N): " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        echo "🛑 Installation aborted."
+        exit 0
+    fi
+    echo "🔄 Proceeding with reinstallation/update..."
 fi
 
 # Detect system architecture
@@ -46,6 +51,11 @@ tar -xzf "$ASSET_NAME"
 # Move the .app to /Applications directory
 APP_NAME="NeoDLP.app"
 echo "📦 Moving $APP_NAME to /Applications directory (sudo required)"
+# Remove existing installation if present
+if [ -d "/Applications/$APP_NAME" ]; then
+    echo "🗑️ Removing existing installation..."
+    sudo rm -rf "/Applications/$APP_NAME"
+fi
 sudo mv "$APP_NAME" /Applications/
 
 # Clean up the downloaded archive
