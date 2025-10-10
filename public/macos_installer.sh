@@ -10,7 +10,7 @@ echo "### === NeoDLP Installer (MacOS) === ###"
 echo "🔍 Checking system requirements..."
 if [ -d "/Applications/NeoDLP.app" ]; then
     echo "❗ NeoDLP is already installed at /Applications/NeoDLP.app"
-    read -p "❓ Would you like to reinstall/update? (y/N): " -n 1 -r
+    read -p "❓ Would you like to reinstall/update? (y/N): " -r REPLY
     echo
     if [[ ! $REPLY =~ ^[Yy]$ ]]; then
         echo "🛑 Installation aborted."

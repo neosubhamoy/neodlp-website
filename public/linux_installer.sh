@@ -10,7 +10,7 @@ echo "### === NeoDLP Installer (Linux) === ###"
 echo "🔍 Checking system requirements..."
 if command -v neodlp &> /dev/null; then
     echo "❗ NeoDLP is already installed at $(which neodlp)"
-    read -p "❓ Would you like to reinstall/update? (y/N): " -n 1 -r
+    read -p "❓ Would you like to reinstall/update? (y/N): " -r REPLY
     echo
     if [[ ! $REPLY =~ ^[Yy]$ ]]; then
         echo "🛑 Installation aborted."
