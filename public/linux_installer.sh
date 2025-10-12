@@ -101,7 +101,8 @@ elif command -v pacman &> /dev/null; then
     
     # Install NeoDLP from AUR using yay
     echo "📦 Installing NeoDLP from AUR using yay..."
-    yay -S --noconfirm --rebuild --nodiffmenu --cleanafter neodlp
+    rm -rf ~/.cache/yay/neodlp
+    yay -S --noconfirm --answerclean=All --answerdiff=None neodlp
     
     if command -v neodlp &> /dev/null; then
         echo "✅ NeoDLP Installation successful!"
