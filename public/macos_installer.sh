@@ -9,13 +9,7 @@ DOWNLOAD_DIR=~/Downloads
 echo "### === NeoDLP Installer (MacOS) === ###"
 echo "🔍 Checking system requirements..."
 if [ -d "/Applications/NeoDLP.app" ]; then
-    echo "❗ NeoDLP is already installed at /Applications/NeoDLP.app"
-    read -p "❓ Would you like to reinstall/update? (y/N): " -r REPLY
-    echo
-    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-        echo "🛑 Installation aborted."
-        exit 0
-    fi
+    echo "⚠️ NeoDLP is already installed at /Applications/NeoDLP.app"
     echo "🔄 Proceeding with reinstallation/update..."
 fi
 
@@ -62,4 +56,10 @@ sudo mv "$APP_NAME" /Applications/
 echo "🧹 Cleaning up..."
 rm "$DOWNLOAD_DIR/$ASSET_NAME"
 
-echo "✅ Installed NeoDLP successfully!"
+if [ -d "/Applications/$APP_NAME" ]; then
+    echo "✅ NeoDLP Installation successful!"
+    exit 0
+else
+    echo "❌ NeoDLP Installation failed!"
+    exit 1
+fi

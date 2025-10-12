@@ -9,13 +9,7 @@ DOWNLOAD_DIR=~/Downloads
 echo "### === NeoDLP Installer (Linux) === ###"
 echo "🔍 Checking system requirements..."
 if command -v neodlp &> /dev/null; then
-    echo "❗ NeoDLP is already installed at $(which neodlp)"
-    read -p "❓ Would you like to reinstall/update? (y/N): " -r REPLY
-    echo
-    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-        echo "🛑 Installation aborted."
-        exit 0
-    fi
+    echo "⚠️ NeoDLP is already installed at $(which neodlp)"
     echo "🔄 Proceeding with reinstallation/update..."
 fi
 
@@ -49,11 +43,31 @@ elif command -v dnf &> /dev/null; then
     PKG_MANAGER="dnf"
     INSTALL_CMD="sudo dnf install -y"
     echo "🐧 Detected rhel/fedora based distro"
+
+    # Enable RPM Fusion repos if not already enabled (for Fedora)
+    if [ -f /etc/fedora-release ]; then
+        echo "ℹ️ Detected Fedora! Checking RPM Fusion repositories..."
+        
+        # Check if RPM Fusion repositories are enabled
+        if ! dnf repolist enabled | grep -q "rpmfusion-free" || ! dnf repolist enabled | grep -q "rpmfusion-nonfree"; then
+            echo "📦 Enabling RPM Fusion free and nonfree repositories... (sudo required)"
+            sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+            sudo dnf install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+            
+            if [ $? -eq 0 ]; then
+                echo "✅ RPM Fusion repositories enabled successfully"
+            else
+                echo "⚠️ Failed to enable RPM Fusion repositories. continuing anyway..."
+            fi
+        else
+            echo "✅ RPM Fusion repositories already enabled"
+        fi
+    fi
 elif command -v yum &> /dev/null; then
     ASSET_NAME="NeoDLP-${VERSION}-1.$([[ "$ASSET_ARCH" == "x64" ]] && echo "x86_64" || echo "aarch64").rpm"
     PKG_MANAGER="yum"
     INSTALL_CMD="sudo yum install -y"
-    echo "🐧 Detected rhel/fedora based distro"
+    echo "🐧 Detected older rhel based distro"
 elif command -v zypper &> /dev/null; then
     ASSET_NAME="NeoDLP-${VERSION}-1.$([[ "$ASSET_ARCH" == "x64" ]] && echo "x86_64" || echo "aarch64").rpm"
     PKG_MANAGER="zypper"
@@ -64,9 +78,9 @@ elif command -v pacman &> /dev/null; then
 
     # Check if yay is installed
     if command -v yay &> /dev/null; then
-        echo "✅ yay is already installed"
+        echo "✅ YAY is already installed"
     else
-        echo "ℹ️ yay not found, installing... (sudo required)"
+        echo "ℹ️ YAY not found! installing... (sudo required)"
         # Install yay
         sudo pacman -S --needed --noconfirm git base-devel
         cd /tmp
@@ -77,9 +91,9 @@ elif command -v pacman &> /dev/null; then
         rm -rf /tmp/yay
         
         if command -v yay &> /dev/null; then
-            echo "✅ yay installed successfully"
+            echo "✅ YAY installed successfully"
         else
-            echo "❌ Failed to install yay"
+            echo "❌ Failed to install YAY"
             echo "🛑 Installation aborted."
             exit 1
         fi
@@ -87,10 +101,15 @@ elif command -v pacman &> /dev/null; then
     
     # Install NeoDLP from AUR using yay
     echo "📦 Installing NeoDLP from AUR using yay..."
-    yay -S --noconfirm neodlp
+    yay -S --noconfirm --rebuild --nodiffmenu --cleanafter neodlp
     
-    echo "✅ Installed NeoDLP successfully!"
-    exit 0
+    if command -v neodlp &> /dev/null; then
+        echo "✅ NeoDLP Installation successful!"
+        exit 0
+    else
+        echo "❌ NeoDLP Installation failed!"
+        exit 1
+    fi
 else
     echo "❌ Unsupported distro: no supported package manager found (apt, dnf, yum, zypper, pacman)"
     echo "🛑 Installation aborted."
@@ -112,4 +131,10 @@ $INSTALL_CMD "$DOWNLOAD_DIR/$ASSET_NAME"
 echo "🧹 Cleaning up..."
 rm "$DOWNLOAD_DIR/$ASSET_NAME"
 
-echo "✅ Installed NeoDLP successfully!"
+if command -v neodlp &> /dev/null; then
+    echo "✅ NeoDLP Installation successful!"
+    exit 0
+else
+    echo "❌ NeoDLP Installation failed!"
+    exit 1
+fi
