@@ -186,7 +186,7 @@ export default function AllDownloadsSection({ release }: { release: LatestReleas
                                 </svg>
                                 Download for Linux
                             </span>
-                            <span className="text-xs">(x64) Appimage</span>
+                            <span className="text-xs">(x64) AppImage</span>
                         </SlidingButton>
                         <SlidingButton
                             slidingContent={
