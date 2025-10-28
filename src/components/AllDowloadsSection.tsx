@@ -25,7 +25,7 @@ export default function AllDownloadsSection({ release }: { release: LatestReleas
                                 </div>
                             }
                             as="a"
-                            href={release.platforms["windows-x86_64"].url}
+                            href={release.platforms["windows-x86_64-nsis"].url}
                             target="_blank"
                             >
                             <span className="font-semibold flex items-center gap-2">
@@ -82,7 +82,7 @@ export default function AllDownloadsSection({ release }: { release: LatestReleas
                                 </div>
                             }
                             as="a"
-                            href={release.platforms["darwin-x86_64"].url}
+                            href={release.platforms["darwin-x86_64-app"].url}
                             target="_blank"
                             >
                             <span className="font-semibold flex items-center gap-2">
@@ -120,7 +120,7 @@ export default function AllDownloadsSection({ release }: { release: LatestReleas
                                 </div>
                             }
                             as="a"
-                            href={release.platforms["darwin-aarch64"].url}
+                            href={release.platforms["darwin-aarch64-app"].url}
                             target="_blank"
                             >
                             <span className="font-semibold flex items-center gap-2">
@@ -177,7 +177,7 @@ export default function AllDownloadsSection({ release }: { release: LatestReleas
                                 </div>
                             }
                             as="a"
-                            href={release.platforms["linux-x86_64"].url}
+                            href={release.platforms["linux-x86_64-appimage"].url}
                             target="_blank"
                             >
                             <span className="font-semibold flex items-center gap-2">

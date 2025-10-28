@@ -109,7 +109,7 @@ export const ContainerScroll = ({
                 </div>
               }
               as="a"
-              href={release.platforms["windows-x86_64"].url}
+              href={release.platforms["windows-x86_64-nsis"].url}
               target="_blank"
             >
               <span className="font-semibold flex items-center gap-2">
@@ -192,7 +192,7 @@ export const ContainerScroll = ({
                 </div>
               }
               as="a"
-              href={release.platforms["linux-x86_64-rpm"].url}
+              href={release.platforms["linux-aarch64-deb"].url}
               target="_blank"
             >
               <span className="font-semibold flex items-center gap-2">
@@ -201,7 +201,7 @@ export const ContainerScroll = ({
                 </svg>
                 Download for Linux
               </span>
-              <span className="text-xs">(x64) RPM Package</span>
+              <span className="text-xs">(ARM64) DEB Package</span>
             </SlidingButton>
             </>
           )}
