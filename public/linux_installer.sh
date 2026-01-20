@@ -34,12 +34,12 @@ VERSION=${TAG#v}
 
 # Detect package manager and set asset name accordingly
 if command -v apt &> /dev/null; then
-    ASSET_NAME="NeoDLP_${VERSION}_$([[ "$ASSET_ARCH" == "x64" ]] && echo "amd64" || echo "arm64")_linux.deb"
+    ASSET_NAME="NeoDLP_${VERSION}_$([[ "$ASSET_ARCH" == "x64" ]] && echo "amd64" || echo "arm64").deb"
     PKG_MANAGER="apt"
     INSTALL_CMD="sudo apt install -y"
     echo "🐧 Detected debian/ubuntu based distro"
 elif command -v dnf &> /dev/null; then
-    ASSET_NAME="NeoDLP-${VERSION}-1.$([[ "$ASSET_ARCH" == "x64" ]] && echo "x86_64" || echo "aarch64")_linux.rpm"
+    ASSET_NAME="NeoDLP-${VERSION}-1.$([[ "$ASSET_ARCH" == "x64" ]] && echo "x86_64" || echo "aarch64").rpm"
     PKG_MANAGER="dnf"
     INSTALL_CMD="sudo dnf install -y"
     echo "🐧 Detected rhel/fedora based distro"
@@ -64,12 +64,12 @@ elif command -v dnf &> /dev/null; then
         fi
     fi
 elif command -v yum &> /dev/null; then
-    ASSET_NAME="NeoDLP-${VERSION}-1.$([[ "$ASSET_ARCH" == "x64" ]] && echo "x86_64" || echo "aarch64")_linux.rpm"
+    ASSET_NAME="NeoDLP-${VERSION}-1.$([[ "$ASSET_ARCH" == "x64" ]] && echo "x86_64" || echo "aarch64").rpm"
     PKG_MANAGER="yum"
     INSTALL_CMD="sudo yum install -y"
     echo "🐧 Detected older rhel based distro"
 elif command -v zypper &> /dev/null; then
-    ASSET_NAME="NeoDLP-${VERSION}-1.$([[ "$ASSET_ARCH" == "x64" ]] && echo "x86_64" || echo "aarch64")_linux.rpm"
+    ASSET_NAME="NeoDLP-${VERSION}-1.$([[ "$ASSET_ARCH" == "x64" ]] && echo "x86_64" || echo "aarch64").rpm"
     PKG_MANAGER="zypper"
     INSTALL_CMD="sudo zypper install -y"
     echo "🐧 Detected opensuse based distro"

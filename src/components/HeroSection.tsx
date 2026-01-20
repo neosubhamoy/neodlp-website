@@ -20,7 +20,7 @@ export default function HeroSection({ release }: { release: LatestRelease }) {
                     titleComponent={
                     <>
                         <h1 className="text-4xl font-semibold text-black dark:text-white">
-                        The next-gen truely cross-platform <br />
+                        The next-gen truly cross-platform <br />
                         <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
                             Video Downloader
                         </span>

@@ -3,7 +3,6 @@ import FeaturesSection from '@/components/FeaturesSection';
 import HeroSection from '@/components/HeroSection';
 import HighlightSection from '@/components/HighlightSection';
 import Main from '@/layouts/main.astro';
-import { Sigma } from 'lucide-react';
 
 // Default fallback data in case fetch fails
 let data = {
@@ -13,59 +12,59 @@ let data = {
   platforms: {
 	"darwin-x86_64": {
 	  signature: "",
-	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_darwin_x64.app.tar.gz"
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_x64.app.tar.gz"
 	},
 	"darwin-aarch64": {
 	  signature: "",
-	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_darwin_aarch64.app.tar.gz"
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_aarch64.app.tar.gz"
 	},
 	"windows-x86_64": {
 	  signature: "",
-	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_x64-setup_windows.exe"
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_x64-setup.exe"
 	},
 	"linux-x86_64": {
 	  signature: "",
-	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_amd64_linux.AppImage"
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_amd64.AppImage"
 	},
 	"linux-aarch64": {
 	  signature: "",
-	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_aarch64_linux.AppImage"
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_aarch64.AppImage"
 	},
 	"darwin-aarch64-app": {
 	  signature: "",
-	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_darwin_aarch64.app.tar.gz"
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_aarch64.app.tar.gz"
 	},
 	"darwin-x86_64-app": {
 	  signature: "",
-	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_darwin_x64.app.tar.gz"
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_x64.app.tar.gz"
 	},
 	"linux-aarch64-deb": {
 	  signature: "",
-	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_arm64_linux.deb"
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_arm64.deb"
 	},
 	"linux-aarch64-rpm": {
 	  signature: "",
-	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP-0.0.0-1.aarch64_linux.rpm"
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP-0.0.0-1.aarch64.rpm"
 	},
 	"linux-x86_64-appimage": {
 	  signature: "",
-	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_amd64_linux.AppImage"
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_amd64.AppImage"
 	},
 	"linux-x86_64-deb": {
 	  signature: "",
-	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_amd64_linux.deb"
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_amd64.deb"
 	},
 	"linux-x86_64-rpm": {
 	  signature: "",
-	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP-0.0.0-1.x86_64_linux.rpm"
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP-0.0.0-1.x86_64.rpm"
 	},
 	"windows-x86_64-nsis": {
 	  signature: "",
-	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_x64-setup_windows.exe"
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_x64-setup.exe"
 	},
 	"windows-x86_64-msi": {
 	  signature: "",
-	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_x64_en-US_windows.msi"
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_x64_en-US.msi"
 	}
   }
 };
@@ -79,11 +78,11 @@ try {
 	const additionalPlatforms = {
 	  "darwin-x86_64-dmg": {
 		signature: "",
-		url: baseUrl + `NeoDLP_${data.version}_x64_darwin.dmg`
+		url: baseUrl + `NeoDLP_${data.version}_x64.dmg`
 	  },
 	  "darwin-aarch64-dmg": {
 		signature: "",
-		url: baseUrl + `NeoDLP_${data.version}_aarch64_darwin.dmg`
+		url: baseUrl + `NeoDLP_${data.version}_aarch64.dmg`
 	  },
 	  "linux-x86_64+aarch64-aur": {
 		signature: "",

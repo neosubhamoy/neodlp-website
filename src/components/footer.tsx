@@ -12,7 +12,7 @@ export default function Footer() {
                             <h5 className="text-2xl font-bold">NeoDLP</h5>
                         </a>
                         <p className="text-sm text-muted-foreground">The Next-Gen Cross-Platform Video Downloader</p>
-                        <p className="text-sm mt-1">NeoDLP &copy; {new Date().getFullYear()} - All Rights Reserved &#8226; <a className="hover:underline" href="https://github.com/neosubhamoy/neodlp/blob/main/LICENSE" target="_blank">MIT License</a></p>
+                        <p className="text-sm mt-1">NeoDLP &copy; 2025 - {new Date().getFullYear()} &#8226; All Rights Reserved &#8226; <a className="hover:underline" href="https://github.com/neosubhamoy/neodlp/blob/main/LICENSE" target="_blank">MIT License</a></p>
                     </div>
                     <div className="flex flex-col gap-2">
                         <a className="flex items-center text-xs text-muted-foreground hover:underline" href="mailto:support@neodlp.neosubhamoy.com">

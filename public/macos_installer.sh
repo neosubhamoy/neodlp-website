@@ -17,10 +17,10 @@ fi
 ARCH=$(uname -m)
 
 if [[ "$ARCH" == "arm64" ]]; then
-    ASSET_NAME="NeoDLP_darwin_aarch64.app.tar.gz"
+    ASSET_NAME="NeoDLP_aarch64.app.tar.gz"
     echo "🧠 Detected Apple Silicon Mac (arm64)"
 elif [[ "$ARCH" == "x86_64" ]]; then
-    ASSET_NAME="NeoDLP_darwin_x64.app.tar.gz"
+    ASSET_NAME="NeoDLP_x64.app.tar.gz"
     echo "🧠 Detected Intel-based Mac (x86_64)"
 else
     echo "❌ Unsupported architecture: $ARCH"
