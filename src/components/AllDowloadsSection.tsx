@@ -251,7 +251,7 @@ export default function AllDownloadsSection({ release }: { release: LatestReleas
                             <TriangleAlert className="size-4 stroke-yellow-400" />
                             <AlertTitle>Experimental Binary Downloads!</AlertTitle>
                             <AlertDescription>
-                                MacOS ARM64 binary downloads are experimental and may not open on Apple Silicon Macs if downloaded from browser (You will get 'Damaged File' error) it's because the binaries are not signed (signing MacOS binaries requires 99$/year Apple Developer Account subscription, which I can't afford RN!) and Apple Silicon Macs don't allow unsigned apps (downloaded from browser) to be installed on the system. If you want to use NeoDLP on your Apple Silicon Macs, you can simply use the command line Curl-Bash Installer (Recommended) given below!
+                                MacOS ARM64 binary downloads are experimental and may not open on Apple Silicon Macs if downloaded from browser (You will get 'Damaged File' error) it's because the binaries are not signed (signing MacOS binaries requires 99$/year Apple Developer Account subscription, which I can't afford RN!) and Apple Silicon Macs don't allow unsigned apps (downloaded from browser) to be installed on the system. If you want to use NeoDLP on your Apple Silicon Macs, you can simply install NeoDLP via Homebrew (Recommended) or use the command line Curl-Bash Installer given below!
                             </AlertDescription>
                         </Alert>
                     </div>
@@ -264,6 +264,9 @@ export default function AllDownloadsSection({ release }: { release: LatestReleas
             <div className="flex flex-col items-center justify-center gap-4 mt-12 z-20">
                 <CommandSnippet title="Windows (WinGet)">
                     winget install neosubhamoy.neodlp
+                </CommandSnippet>
+                <CommandSnippet title="MacOS (Homebrew)">
+                    brew install neosubhamoy/tap/neodlp
                 </CommandSnippet>
                 <CommandSnippet title="MacOS (Curl-Bash Installer)">
                     curl -sSL https://neodlp.neosubhamoy.com/macos_installer.sh | bash
