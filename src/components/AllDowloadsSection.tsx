@@ -271,10 +271,13 @@ export default function AllDownloadsSection({ release }: { release: LatestReleas
                 <CommandSnippet title="MacOS (Curl-Bash Installer)">
                     curl -sSL https://neodlp.neosubhamoy.com/macos_installer.sh | bash
                 </CommandSnippet>
-                <CommandSnippet title="Linux (Curl-Bash Installer)">
+                <CommandSnippet title="Linux (Flatpak) (Flathub)">
+                    flatpak install flathub com.neosubhamoy.neodlp
+                </CommandSnippet>
+                <CommandSnippet title="Linux (Native) (Curl-Bash Installer)">
                     curl -sSL https://neodlp.neosubhamoy.com/linux_installer.sh | bash
                 </CommandSnippet>
-                <CommandSnippet title="Arch Linux (AUR)">
+                <CommandSnippet title="Arch Linux (Native) (AUR)">
                     yay -S neodlp
                 </CommandSnippet>
             </div>
