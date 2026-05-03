@@ -1,5 +1,5 @@
 import { GlowingEffect } from "@/components/ui/glowing-effect";
-import { Box, Globe, HeartHandshake, Lock, Search, Settings, Sparkles, Video } from "lucide-react";
+import { Globe, HeartHandshake, Settings, Sparkles, Video } from "lucide-react";
 
 interface GridItemProps {
     area: string;
@@ -41,9 +41,9 @@ const GridItem = ({ area, icon, title, description }: GridItemProps) => {
 
 export default function FeaturesSection() {
     return (
-        <section className="flex flex-col w-full" id="features">
+        <section className="flex flex-col w-full mb-26" id="features">
             <div className="flex flex-col relative items-center">
-                <div className="flex flex-col items-center justify-center gap-2 pt-40 pb-16">
+                <div className="flex flex-col items-center justify-center gap-2 pt-40 pb-26">
                     <h3 className="text-3xl lg:text-4xl font-bold">Features</h3>
                     <p className="text-sm lg:text-lg font-semibold text-muted-foreground">Take a look on NeoDLP's features and offerings</p>
                 </div>

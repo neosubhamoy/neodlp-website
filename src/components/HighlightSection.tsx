@@ -3,7 +3,7 @@ import { WobbleCard } from "@/components/ui/wobble-card";
 
 export default function HighlightSection() {
     return (
-        <section className="flex flex-col w-full">
+        <section className="flex flex-col w-full mb-20">
             <div className="flex flex-col relative">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full px-4">
                 <WobbleCard

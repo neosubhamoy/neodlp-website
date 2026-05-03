@@ -1,6 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { ModeToggle } from "@/components/ModeToggle";
-import { Github } from "lucide-react";
+// import { Button } from "@/components/ui/button";
+// import { ModeToggle } from "@/components/ModeToggle";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Github01Icon } from "@hugeicons/core-free-icons";
 import {
     Navbar as ResizableNavbar,
     NavBody,
@@ -35,10 +36,10 @@ export default function Navbar() {
                 <NavbarLogo />
                 <NavItems items={navItems} />
                 <div className="flex items-center gap-4">
-                    <NavbarButton variant="secondary" as="a" href="https://github.com/neosubhamoy/neodlp" target="_blank" aria-label="GitHub">
-                        <Github className="h-4 w-4" />
-                    </NavbarButton>
                     <SimpleModeToggle />
+                    <NavbarButton variant="secondary" as="a" href="https://github.com/neosubhamoy/neodlp" target="_blank" aria-label="GitHub">
+                        <HugeiconsIcon icon={Github01Icon} className="size-5" />
+                    </NavbarButton>
                     <NavbarButton variant="primary" as="a" href="/download">
                         Download
                     </NavbarButton>
@@ -78,7 +79,7 @@ export default function Navbar() {
                         target="_blank"
                         aria-label="GitHub"
                     >
-                        <Github className="h-4 w-4" />
+                        <HugeiconsIcon icon={Github01Icon} className="size-5" />
                         View in GitHub
                     </NavbarButton>
                     <NavbarButton

@@ -217,7 +217,7 @@ export const ContainerScroll = ({
           >
             <span className="font-semibold flex items-center gap-2">
               <ArrowDownToLine className="size-4" />
-              All Downloads
+              More Downloads
             </span>
             <span className="text-xs">Choose from all download options</span>
           </SlidingButton>

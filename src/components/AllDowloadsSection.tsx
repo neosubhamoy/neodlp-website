@@ -246,7 +246,7 @@ export default function AllDownloadsSection({ release }: { release: LatestReleas
                             <span className="text-xs">(x64 / ARM64) AUR Snapshot</span>
                         </SlidingButton>
                     </div>
-                    <div className="flex items-center justify-center text-start max-w-2xl px-4">
+                    <div className="flex items-center justify-center text-start max-w-2xl px-4 mt-14">
                         <Alert>
                             <TriangleAlert className="size-4 stroke-yellow-400" />
                             <AlertTitle>Experimental Binary Downloads!</AlertTitle>
@@ -257,7 +257,7 @@ export default function AllDownloadsSection({ release }: { release: LatestReleas
                     </div>
                 </div>
             </BackgroundLines>
-            <div className="flex flex-col items-center justify-center text-center gap-2 mt-10 sm:mt-65 z-20">
+            <div className="flex flex-col items-center justify-center text-center gap-2 mt-24 sm:mt-65 z-20">
                 <p className="mt-4 text-xl font-semibold">Install via Command Line</p>
                 <p className="text-sm text-muted-foreground">Install NeoDLP directly via command line by running the command below based on your platform</p>
             </div>
