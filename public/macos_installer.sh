@@ -3,7 +3,7 @@
 # Config
 OWNER="neosubhamoy"
 REPO="neodlp"
-DOWNLOAD_DIR=~/Downloads
+DOWNLOAD_DIR=$(mktemp -d)
 
 # Check if NeoDLP is already installed
 echo "### === NeoDLP Installer (MacOS) === ###"
@@ -36,11 +36,19 @@ URL="https://github.com/$OWNER/$REPO/releases/download/$TAG/$ASSET_NAME"
 
 # Download the release asset
 echo "⬇️ Downloading $ASSET_NAME from tag $TAG..."
-curl -L -o "$DOWNLOAD_DIR/$ASSET_NAME" "$URL"
+curl -fL -o "$DOWNLOAD_DIR/$ASSET_NAME" "$URL"
+
+# Check if download succeeded
+if [ ! -f "$DOWNLOAD_DIR/$ASSET_NAME" ]; then
+    echo "❌ Download failed!"
+    exit 1
+fi
 
 # Extract the archive
-cd "$DOWNLOAD_DIR"
-tar -xzf "$ASSET_NAME"
+if ! tar -xzf "$DOWNLOAD_DIR/$ASSET_NAME" -C "$DOWNLOAD_DIR"; then
+    echo "❌ Failed to extract the archive!"
+    exit 1
+fi
 
 # Move the .app to /Applications directory
 APP_NAME="NeoDLP.app"
@@ -50,7 +58,7 @@ if [ -d "/Applications/$APP_NAME" ]; then
     echo "🗑️ Removing existing installation..."
     sudo rm -rf "/Applications/$APP_NAME"
 fi
-sudo mv "$APP_NAME" /Applications/
+sudo mv "$DOWNLOAD_DIR/$APP_NAME" /Applications/
 
 # Clean up the downloaded archive
 echo "🧹 Cleaning up..."

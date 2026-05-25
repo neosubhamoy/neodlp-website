@@ -3,7 +3,7 @@
 # Config
 OWNER="neosubhamoy"
 REPO="neodlp"
-DOWNLOAD_DIR=~/Downloads
+DOWNLOAD_DIR=/tmp
 
 # Check if NeoDLP is already installed
 echo "### === NeoDLP Installer (Linux) === ###"
@@ -122,7 +122,13 @@ URL="https://github.com/$OWNER/$REPO/releases/download/$TAG/$ASSET_NAME"
 
 # Download the release asset
 echo "⬇️ Downloading $ASSET_NAME from tag $TAG..."
-curl -L -o "$DOWNLOAD_DIR/$ASSET_NAME" "$URL"
+curl -fL -o "$DOWNLOAD_DIR/$ASSET_NAME" "$URL"
+
+# Check if download succeeded
+if [ ! -f "$DOWNLOAD_DIR/$ASSET_NAME" ]; then
+    echo "❌ Download failed!"
+    exit 1
+fi
 
 # Install the package
 echo "📦 Installing $ASSET_NAME using $PKG_MANAGER (sudo required)"
