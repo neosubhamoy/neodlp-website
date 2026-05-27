@@ -20,13 +20,17 @@ let data = {
 	  signature: "",
 	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_x64-setup.exe"
 	},
+	"windows-aarch64": {
+	  signature: "",
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_arm64-setup.exe"
+	},
 	"linux-x86_64": {
 	  signature: "",
-	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_amd64.AppImage"
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_amd64.deb"
 	},
 	"linux-aarch64": {
 	  signature: "",
-	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_aarch64.AppImage"
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_arm64.deb"
 	},
 	"darwin-aarch64-app": {
 	  signature: "",
@@ -44,10 +48,6 @@ let data = {
 	  signature: "",
 	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP-0.0.0-1.aarch64.rpm"
 	},
-	"linux-x86_64-appimage": {
-	  signature: "",
-	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_amd64.AppImage"
-	},
 	"linux-x86_64-deb": {
 	  signature: "",
 	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_amd64.deb"
@@ -63,6 +63,14 @@ let data = {
 	"windows-x86_64-msi": {
 	  signature: "",
 	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_x64_en-US.msi"
+	},
+	"windows-aarch64-nsis": {
+	  signature: "",
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_arm64-setup.exe"
+	},
+	"windows-aarch64-msi": {
+	  signature: "",
+	  url: "https://github.com/neosubhamoy/neodlp/releases/download/v0.0.0/NeoDLP_0.0.0_arm64_en-US.msi"
 	}
   }
 };
@@ -82,10 +90,10 @@ try {
 		signature: "",
 		url: baseUrl + `NeoDLP_${data.version}_aarch64.dmg`
 	  },
-	  "linux-x86_64+aarch64-aur": {
-		signature: "",
-		url: `https://aur.archlinux.org/cgit/aur.git/snapshot/neodlp.tar.gz`
-	  }
+	//   "linux-x86_64+aarch64-aur": {
+	// 	signature: "",
+	// 	url: `https://aur.archlinux.org/cgit/aur.git/snapshot/neodlp.tar.gz`
+	//   }
 	};
 	
 	// Merge additional custom platforms with the original data

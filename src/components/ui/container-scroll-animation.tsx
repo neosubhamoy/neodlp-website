@@ -101,6 +101,7 @@ export const ContainerScroll = ({
             </div>
           </button> */}
           {os === "windows" && (
+            <>
             <SlidingButton
               slidingContent={
                 <div className="flex items-center justify-center gap-2 text-white dark:text-black">
@@ -118,8 +119,28 @@ export const ContainerScroll = ({
                 </svg>
                 Download for Windows
               </span>
-              <span className="text-xs">(x64 / ARM64) EXE Installer</span>
+              <span className="text-xs">(x64) EXE Installer</span>
             </SlidingButton>
+            <SlidingButton
+              slidingContent={
+                <div className="flex items-center justify-center gap-2 text-white dark:text-black">
+                  <Download className="size-4" />
+                  <span>Download Now</span>
+                </div>
+              }
+              as="a"
+              href={release.platforms["windows-aarch64-nsis"].url}
+              target="_blank"
+            >
+              <span className="font-semibold flex items-center gap-2">
+                <svg className="size-4 fill-white dark:fill-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/>
+                </svg>
+                Download for Windows
+              </span>
+              <span className="text-xs">(ARM64) EXE Installer</span>
+            </SlidingButton>
+            </>
           )}
           {os === "macos" && (
             <>
