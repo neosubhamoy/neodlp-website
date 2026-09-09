@@ -4,7 +4,6 @@ import NavBar from '@/components/navbar';
 import Footer from '@/components/footer';
 import { ClientRouter } from 'astro:transitions';
 import LoadingIndicator from 'astro-loading-indicator/component';
-import { Toaster } from '@/components/ui/sonner';
 const { title, description } = Astro.props;
 ---
 
@@ -35,7 +34,6 @@ const { title, description } = Astro.props;
 			<slot />
 		</main>
 		<Footer />
-		<Toaster client:load />
 	</body>
 </html>
 

@@ -1,10 +1,6 @@
 import type { OS } from "@/types/os";
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
 
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
+export { cn } from "cn";
 
 export function getOS(): OS {
   const userAgent = window.navigator.userAgent;
