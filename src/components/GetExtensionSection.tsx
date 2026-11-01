@@ -1,4 +1,4 @@
-import type { LatestExtensionRelease } from "@/types/release";
+import type { LatestExtensionRelease } from "@/types/index";
 import { SlidingButton } from "@/components/ui/sliding-button";
 import { ArrowRight, Download } from "lucide-react";
 import { BackgroundLines } from "@/components/ui/background-lines";

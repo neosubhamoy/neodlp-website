@@ -1,4 +1,4 @@
-import type { OS } from "@/types/os";
+import type { OS } from "@/types/index";
 
 export { cn } from "cn";
 
