@@ -1,8 +1,8 @@
 {
-    "$schema": "./node_modules/wrangler/config-schema.json",
+	"$schema": "./node_modules/wrangler/config-schema.json",
 	"name": "neodlp-website",
 	"main": "@astrojs/cloudflare/entrypoints/server",
-	"compatibility_date": "2026-09-09",
+	"compatibility_date": "2026-10-30",
 	"compatibility_flags": ["global_fetch_strictly_public", "nodejs_compat"],
 	"assets": {
 		"directory": "./dist",

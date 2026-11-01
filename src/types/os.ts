@@ -1,1 +1,0 @@
-export type OS = 'windows' | 'macos' | 'linux' | 'android' | 'ios' | 'unknown';
