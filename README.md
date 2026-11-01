@@ -32,6 +32,7 @@ npm run dev              # for development
 npm run build            # for production build
 
 npm run cf-typegen       # re-generate wrangler types after modification
+npm run format           # format the code
 ```
 
 ## License
