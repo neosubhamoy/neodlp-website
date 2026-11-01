@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion, MotionValue } from "motion/react";
 import { ArrowDownToLine, ArrowRight, Download, Puzzle } from "lucide-react";
 import type { LatestRelease, OS } from "@/types/index";
-import { SlidingButton } from "@/components/ui/sliding-button";
+import { SlidingButton } from "@/components/sliding-button";
 import { getOS } from "@/lib/utils";
 
 export const ContainerScroll = ({

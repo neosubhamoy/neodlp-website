@@ -1,4 +1,4 @@
-import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { InfiniteMovingCards } from "@/components/infinite-moving-cards";
 
 export default function TestimonialSection() {
 	const testimonials = [

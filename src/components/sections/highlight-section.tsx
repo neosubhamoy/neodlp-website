@@ -1,4 +1,4 @@
-import { WobbleCard } from "@/components/ui/wobble-card";
+import { WobbleCard } from "@/components/wobble-card";
 
 export default function HighlightSection() {
 	return (

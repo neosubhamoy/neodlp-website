@@ -1,6 +1,6 @@
 import React from "react";
 import { Terminal } from "lucide-react";
-import { CopyButton } from "@/components/ui/copy-button";
+import { CopyButton } from "@/components/copy-button";
 
 export const CommandSnippet = ({
 	title,

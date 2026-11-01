@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Moon, Sun } from "lucide-react";
-import { NavbarButton } from "@/components/ui/resizable-navbar";
+import { NavbarButton } from "@/components/resizable-navbar";
 
-export function SimpleModeToggle() {
+export function ModeToggle() {
 	const [isDark, setIsDark] = React.useState(false);
 
 	React.useEffect(() => {

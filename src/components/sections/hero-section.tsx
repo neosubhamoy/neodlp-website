@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { ContainerScroll } from "@/components/container-scroll-animation";
 import { type LatestRelease } from "@/types/index";
 
 export default function HeroSection({ release }: { release: LatestRelease }) {

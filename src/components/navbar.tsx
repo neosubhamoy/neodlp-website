@@ -12,9 +12,9 @@ import {
 	MobileNavHeader,
 	MobileNavToggle,
 	MobileNavMenu,
-} from "@/components/ui/resizable-navbar";
+} from "@/components/resizable-navbar";
 import { useState } from "react";
-import { SimpleModeToggle } from "@/components/SimpleModeToggle";
+import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Navbar() {
 	const navItems = [
@@ -36,7 +36,7 @@ export default function Navbar() {
 				<NavbarLogo />
 				<NavItems items={navItems} />
 				<div className="flex items-center gap-4">
-					<SimpleModeToggle />
+					<ModeToggle />
 					<NavbarButton
 						variant="secondary"
 						as="a"

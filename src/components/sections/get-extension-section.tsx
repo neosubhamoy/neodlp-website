@@ -1,7 +1,7 @@
 import type { LatestExtensionRelease } from "@/types/index";
-import { SlidingButton } from "@/components/ui/sliding-button";
+import { SlidingButton } from "@/components/sliding-button";
 import { ArrowRight, Download } from "lucide-react";
-import { BackgroundLines } from "@/components/ui/background-lines";
+import { BackgroundLines } from "@/components/background-lines";
 
 export default function GetExtensionSection({
 	release,

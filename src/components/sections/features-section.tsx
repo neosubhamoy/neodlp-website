@@ -1,4 +1,4 @@
-import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { GlowingEffect } from "@/components/glowing-effect";
 import { Globe, HeartHandshake, Settings, Sparkles, Video } from "lucide-react";
 
 interface GridItemProps {

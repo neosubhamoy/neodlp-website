@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import type { CopyState } from "@/hooks/use-copy-to-clipboard";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { Button } from "@/components/ui/button";
-import { IconSwap, IconSwapItem } from "@/components/ui/icon-swap";
+import { IconSwap, IconSwapItem } from "@/components/icon-swap";
 import { CopyIcon, CheckIcon, CircleXIcon } from "lucide-react";
 
 export type CopyStateIconProps = {

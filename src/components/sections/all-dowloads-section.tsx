@@ -1,9 +1,9 @@
 import { type LatestRelease } from "@/types/index";
-import { SlidingButton } from "@/components/ui/sliding-button";
+import { SlidingButton } from "@/components/sliding-button";
 import { Download, TriangleAlert } from "lucide-react";
-import { CommandSnippet } from "@/components/ui/command-snippet";
+import { CommandSnippet } from "@/components/command-snippet";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { BackgroundLines } from "@/components/ui/background-lines";
+import { BackgroundLines } from "@/components/background-lines";
 
 export default function AllDownloadsSection({
 	release,
