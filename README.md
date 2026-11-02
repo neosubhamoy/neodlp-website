@@ -6,8 +6,8 @@ Official Website of NeoDLP (Neo Downloader Plus)
 [![github stars](https://img.shields.io/github/stars/neosubhamoy/neodlp-website?color=yellow&style=for-the-badge)](https://github.com/neosubhamoy/neodlp-website/stargazers)
 [![github license](https://img.shields.io/github/license/neosubhamoy/neodlp-website?color=blue&style=for-the-badge)](https://github.com/neosubhamoy/neodlp-website/blob/main/LICENSE)
 
-> [!TIP]
-> **🥰 Liked this project? Please consider giving it a star (🌟) on github to show us your appreciation and help the algorithm recommend this project to even more awesome people like you!**
+> [!WARNING]
+> This project is now moved to the base [neosubhamoy/neodlp](https://github.com/neosubhamoy/neodlp) repo (under `website/` folder)
 
 ## Technologies Used
 
